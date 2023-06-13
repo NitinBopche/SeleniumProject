@@ -1,0 +1,299 @@
+package StepDefinitions;
+
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Set;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.interactions.Actions;
+
+import Utilities.BaseClass;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class SeleniumFraStepDef extends BaseClass{
+Actions actions;
+	@Before()
+	public void Before_Scenario() {
+		BaseClass.setup();
+	}
+	@After(order = 1)
+	public void TakeScreenshortAfterScenarioFailed(Scenario SC) {
+		if(SC.isFailed()==true) {
+			TakesScreenshot SS = ((TakesScreenshot)driver);
+			byte[] SorceFile = SS.getScreenshotAs(OutputType.BYTES);
+			SC.attach(SorceFile, "image/png", "screenshot");
+		}
+	}
+	@After(order=0)
+	public void After_Scenario() {
+		BaseClass.teardown();
+	}
+
+
+
+	@Given("I lauch auotmation demo website for practice selenium")
+	public void i_lauch_auotmation_demo_website_for_practice_selenium() throws InterruptedException {
+		driver.get(prop.getProperty("BaseUrl"));
+//		driver.navigate().to(prop.getProperty("DemoQA"));
+//		driver.navigate().back();
+//		driver.navigate().forward();
+//		driver.navigate().back();
+//		driver.navigate().refresh();
+	}
+
+	@When("I send value in the first name value field")
+	public void i_send_value_in_the_first_name_value_field() {
+		register.SendKeyUsername();
+		//		Thread.sleep(5000);
+	}
+
+	@When("I send value in the last name value field")
+	public void i_send_value_in_the_last_name_value_field() {
+		register.SendKeyLastName();
+		//	Thread.sleep(5000);
+	}
+
+	@Then("I verify that Full Name title")
+	public void GetTextFirstName() {
+		String NameUser = register.GetTextFirstName();
+		System.out.printf("This is my == ", NameUser);
+		Assert.assertEquals("Full Name*", NameUser);
+	}
+	@When("I click on the AB testing")
+	public void i_click_on_the_add_and_remove_elements(){
+		register.ClickABTesting();
+	}
+	@Then("I get text paragraph")
+	public void i_get_text_paragraph() {
+		String Text = register.GetTextParagraph();
+		System.out.println(Text);
+	}
+
+	@When("I click on add and remove element")
+	public void i_click_on_add_and_remove_element() throws InterruptedException {
+		register.ClickAddAndRemoveElement();
+		Thread.sleep(2000);
+	}
+
+	@When("I click on add element button")
+	public void i_click_on_add_element_button() throws InterruptedException {
+		register.ClickAddElement();
+		Thread.sleep(2000);
+	}
+
+	@Then("I verify delete button displayed")
+	public void i_verify_delete_button_displayed() {
+		boolean Value = register.AddAndRemoveElementIsDisplayed();
+		Assert.assertTrue(Value);
+	}
+
+	@When("I click on delete button")
+	public void i_click_on_delete_button() throws InterruptedException {
+		register.ClickDeleteElement();
+		Thread.sleep(2000);
+	}
+	@When("^I click on add element \"(.*)\" times$")
+	public void AddFiveDeleteElements(int value) throws InterruptedException{
+		for(int i=0; i< value; i++) {
+			register.ClickAddElement();
+			Thread.sleep(1000);
+		}
+	}
+	@Then("I count number of delete elements present on the web page")
+	public void CountDeleteElements(){
+		System.out.println(register.CountOfDeleteElement());
+		System.out.println("Hello");
+	}
+	@When("I click on checkboxes link")
+	public void CheckboxLink(){
+		register.ClickCheckboxes();
+	}
+	@When("I click on the checkbox1")
+	public void ClickCheckB1() throws InterruptedException{
+		register.ClickCheckbox1();
+		Thread.sleep(5000);
+	}
+	@When("I verify checkbox is selected")
+	public void IsCheckBSelected(){
+		boolean value = register.IsCheckbox1Selected();
+		Assert.assertTrue(value);
+	}
+	@When("I get text of all delete elements")
+	public void GetTextDeleteElements(){
+		register.GetTextOfDeleteElement();
+	}
+	@Then("I verify alert text")
+	public void Click_JS_Alert(){
+		Assert.assertEquals("I am a JS Alert", register.getTextAlert());
+	}
+	@When("^I click on \"(.*)\" elements on the home page$")
+	public void SelectElementToAutomate(String Value){
+		FH.GenericDropdown(register.ReturnElementsOnHomePage(), Value);
+	}
+	@When("^I click on \"(.*)\" alert option$")
+	public void AlertOptoion(String Value){
+		FH.GenericDropdown(register.ReturnListOfAlerts(), Value);
+	}
+	@When("I click on ok button on alert")
+	public void ClickOKButton() throws InterruptedException{
+		Thread.sleep(2000);
+		register.ClickOkButton();
+		Thread.sleep(3000);
+	}
+	@When("I dismiss alert")
+	public void ClickCancelButton() throws InterruptedException{
+		Thread.sleep(2000);
+		register.ClickCancelButton();
+		Thread.sleep(3000);
+	}
+	@When("I click on  Switch to element")
+	public void CLickOnSwitchTO(){
+		AutoTest.ClickSwitchTo();
+	}
+	@When("I select dropdown value")
+	public void SelectDropValue() throws InterruptedException{
+		Thread.sleep(3000);
+		FH.GenericDropdown(AutoTest.GetElementOfSwitchToDropValues(), "Alerts");
+		Thread.sleep(3000);
+		AutoTest.ClickCloseButton();
+	}
+	@When("^I sendkey \"(.*)\" to alert$")
+	public void AlertSendKey(String value) throws InterruptedException{
+		register.SendKeyToAlert(value);
+		Thread.sleep(3000);
+	}
+	@When("^I click on \"(.*)\" elements on the Frames page$")
+	public void SelectTypesOfFrames(String Value){
+		FH.GenericDropdown(register.ReturnListOfFrameTypes(), Value);
+	}
+	@Then("I send text to the frame body")
+	public void SendtextToFrameBody() throws InterruptedException{
+		register.Frame_Body("This is the body under iframe");
+	}
+	@When("^I switch to frame$")
+	public void AlertSendKey(){
+		register.SwitchToIframe();
+	}
+	@When("^I get text of middle frame$")
+	public void getTextOfNestedFrame(){
+		register.SwitchToNestedFrames(1);
+
+		register.SwitchToNestedFrames(2);
+		System.out.println(register.GetTextOfFrame());
+		System.out.println("Hello");
+	}
+	@When("^I select dropdown value \"(.*)\" using select class by \"(.*)\"$")
+	public void SelectDropdown(String value, String ByValue) throws InterruptedException{
+		Thread.sleep(2000);
+		if(ByValue.equals("VisibleText")) {
+			register.SelectDropdownbyVisibleText(value);
+		}
+		else if(ByValue.equals("Index")) {
+			int IntValue = Integer.parseInt(value);
+			register.SelectDropdownByIndex(IntValue);
+		}
+		else if(ByValue.equals("AttributrValue")) {
+			register.SelectDropdownByvalue(value);
+		}
+		Thread.sleep(2000);
+	}
+	@Then("^I drag and drop elements$")
+	public void DragANdDrop() throws InterruptedException{
+		Thread.sleep(2000);
+		register.DragAndDropElements();
+		Thread.sleep(2000);
+	}
+	@When("^I click on new window click here$")
+	public void NewWindowClick() throws InterruptedException{
+		register.ClickNewWindow();
+		Thread.sleep(3000);
+	}
+	@Then("^I get title of new window$")
+	public void NewWindowTitle(){
+		//get title and URL of current window before switching to new window
+		String title = driver.getTitle();
+		String URL = driver.getCurrentUrl();
+		System.out.println(title + "=" + "Title" + "\n" + URL + " = URL");
+
+		//Here we are switching to new window
+		Set<String> Windows = driver.getWindowHandles();
+		for(String win: Windows) {
+			driver.switchTo().window(win);
+		}
+
+		//Get title and URL of new window after switching
+		String Newtitle = driver.getTitle();
+		String NewURL = driver.getCurrentUrl();
+		System.out.println(Newtitle + " =" + " Title" + "\n" + NewURL + " = URL");
+	}
+	@Given("Open bssic authentication site to provide pass and username")
+	public void Basic_Aut() throws InterruptedException {
+		driver.get(prop.getProperty("BasicAuthentication"));
+		Thread.sleep(3000);
+	}
+	@Then("I get massage")
+	public void GetMassage() throws InterruptedException {
+		String text = driver.findElement(By.cssSelector("p")).getText();
+		System.out.println(text + "\nHello");
+		Thread.sleep(3000);
+	}
+	@When("I will upload file")
+	public void Upload_file() throws InterruptedException {
+		String file = "C:\\Users\\Khushi\\Desktop\\UploadMe.txt";
+		register.UploadFile(file);
+		Thread.sleep(3000);
+		register.ClickUploadButton();
+		Thread.sleep(3000);
+	}
+	@When("I perform and verify keyboard function")
+	public void KeyBoardActions() throws InterruptedException {
+		actions = new Actions(driver);
+		actions.sendKeys(Keys.ESCAPE).perform();
+		Thread.sleep(1000);
+		actions.sendKeys(Keys.ENTER).perform();
+		Thread.sleep(1000);
+		actions.sendKeys(Keys.BACK_SPACE).perform();
+		Thread.sleep(1000);
+		actions.sendKeys(Keys.TAB).perform();
+		Thread.sleep(1000);
+		register.RightClick();
+		Thread.sleep(1000);
+		register.DoubleClicks();
+		Thread.sleep(1000);
+		actions.sendKeys(Keys.BACK_SPACE).perform();
+		Thread.sleep(1000);
+		register.SelectAllUsingControlPlusAllButton();
+		Thread.sleep(2000);
+		actions.sendKeys(Keys.DELETE).perform();
+		Thread.sleep(2000);
+		register.HoldActions();
+		Thread.sleep(2000);
+	}
+	@Then("I verify different dynamic waits")
+	public void Dynamic_Loading(){
+		System.out.println(register.GetTextOfHelloWorld() + "\nHello");
+	}
+	@When("I fetch data from the excel file")
+	public void Excel_Data(){
+		File FileSource = new File("C:\\Users\\Khushi\\Desktop\\Nitin\\EclipsWorkspace\\MyFrame\\TestData\\ExcelFile.xlsx");
+		
+	}
+	
+		
+		
+		
+	
+}
