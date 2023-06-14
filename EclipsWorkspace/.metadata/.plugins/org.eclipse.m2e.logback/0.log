@@ -8422,3 +8422,7 @@
 2023-06-14 07:49:38,620 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\src\main\resources
 2023-06-14 07:49:38,620 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2023-06-14 07:49:38,620 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\src\test\resources
+2023-06-14 07:59:05,528 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-06-14 07:59:05,528 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\src\main\resources
+2023-06-14 07:59:05,529 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-06-14 07:59:05,529 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\src\test\resources
