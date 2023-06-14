@@ -8407,3 +8407,18 @@
 2023-06-13 09:27:07,194 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\Nitin\EclipsWorkspace\MyFrame\src\main\resources
 2023-06-13 09:27:07,197 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2023-06-13 09:27:07,197 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\Nitin\EclipsWorkspace\MyFrame\src\test\resources
+2023-06-14 07:45:34,549 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-06-14 07:45:37,536 [Worker-3: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: MyFrame:MyFrame:0.0.1-SNAPSHOT @ C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\pom.xml.
+2023-06-14 07:45:38,218 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-06-14 07:45:38,218 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\src\main\resources
+2023-06-14 07:45:38,221 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-06-14 07:45:38,221 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\src\test\resources
+2023-06-14 07:46:06,547 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: MyFrame:MyFrame:0.0.1-SNAPSHOT @ C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\pom.xml.
+2023-06-14 07:46:52,606 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-06-14 07:46:52,607 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\src\main\resources
+2023-06-14 07:46:52,609 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-06-14 07:46:52,609 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\src\test\resources
+2023-06-14 07:49:38,620 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-06-14 07:49:38,620 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\src\main\resources
+2023-06-14 07:49:38,620 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-06-14 07:49:38,620 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Khushi\Desktop\MyRepo\SeleniumProject\EclipsWorkspace\MyFrame\src\test\resources
