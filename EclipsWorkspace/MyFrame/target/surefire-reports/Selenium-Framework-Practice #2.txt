@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: Selenium-Framework-Practice #2
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 46.499 s <<< FAILURE! - in Selenium-Framework-Practice #2
+Perform key board function(Selenium-Framework-Practice #2)  Time elapsed: 46.499 s  <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 19 out of bounds for length 0
+
