@@ -6,12 +6,12 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"C:\\Users\\Khushi\\Desktop\\Nitin\\EclipsWorkspace\\MyFrame\\Features\\SeleniumFraPractice.feature"},
+		features = {"C:\\Users\\Khushi\\Desktop\\Nitin\\EclipsWorkspace\\MyFrame\\Features"},
 		glue = "StepDefinitions",
 		dryRun = false,
 		monochrome = true,
-		plugin = {"pretty", "html:target/Cucumber-reports/report1.html", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
-		tags = ("@Excel")
+		plugin = {"pretty", "html:target/Cucumber-reports/report1.html", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}
+//		tags = ("@Excel")
 		)
 public class Run {
 }
