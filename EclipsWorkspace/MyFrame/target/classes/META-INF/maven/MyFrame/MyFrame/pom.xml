@@ -181,7 +181,7 @@
           <configuration>
 			  <includes>**/Run.java</includes>
           <parallel>methods</parallel>
-          <threadCount>2</threadCount>
+          <threadCount>10</threadCount>
         </configuration>
         </plugin>
         <plugin>

@@ -296,8 +296,4 @@ Actions actions;
 		System.out.println(value + "\nAtlanta");
 	}
 	
-		
-		
-		
-	
 }
